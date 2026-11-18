@@ -2,7 +2,7 @@
 
 題目 B：以 TypeScript、原生 Web Components 與 Shadow DOM 建立框架無關的商品卡展示間。
 
-已完成兩種商品卡、schema 驅動調整面板、localStorage 保存與同源跨分頁同步，以及兩個獨立 HTML 嵌入範例。Gate 1、Gate 2 已由使用者核准；功能與 QA 完成，等待 Gate 3 最終人工檢視。依使用者要求，所有 commit 只在本機，**未 push GitHub**。
+已完成兩種商品卡、schema 驅動調整面板、localStorage 保存與同源跨分頁同步，以及兩個獨立 HTML 嵌入範例。Gate 1、Gate 2 已由使用者核准；功能與 QA 完成，等待 Gate 3 最終人工檢視。開發期間先保留本地 commit；使用者完成需求文件檢視後，已授權推送至指定 GitHub repository。
 
 ## 題目 B 需求對照
 

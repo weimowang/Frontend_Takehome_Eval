@@ -44,3 +44,7 @@
 - 實際驗證：60 unit、20 browser、library/site build通過。正式build smoke驗證重整保存、reset與sample update/destroy；無pageerror。1440/375截圖均檢視，無水平溢出。
 - sample首次build不接受top-level await，調整site target；Vite改寫dynamic import影響獨立載入驗證，改classic async bootstrap直接載入dist，各一次修正。沒有修改測試預期。
 - Gate 3仍待人工最終檢視；沒有替使用者寫入DECISIONS.md或宣稱Gate 3通過。所有commit僅本地。
+
+## GitHub 推送授權 / 2026-11-18
+
+使用者明確要求「那幫我推到github」，撤銷先前暫不push限制。將main與完整本地commit history推送至指定origin，不使用force push。此授權不視為額外的Gate 3畫面核准。
