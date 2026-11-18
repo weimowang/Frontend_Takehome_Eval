@@ -1,41 +1,14 @@
 # Merchant Card Showroom
 
-題目 B，以 TypeScript + 原生 Web Components 建立框架無關的商品卡展示間。
+題目 B：TypeScript + 原生 Web Components，使用 Shadow DOM 與同一份 schema 展示兩種商品卡。
 
-目前狀態：Gate 1 已核准，進入串行契約層與第一張 ranking 卡實作；Gate 2 前不展開後續平行功能。
+目前完成 5 張直式限時搶購卡、3 張橫式暢銷卡、8 張本地 SVG 示意圖，以及單卡選取、版型切換與售價預覽。等待本輪畫面檢視後，再完成完整 editor、persistence 與嵌入範例。
 
-## 審閱入口
+依使用者要求，所有 commit 僅在本機，尚未 push GitHub。
 
-- [Gate 1 與待決問題](docs/QUESTIONS.md)
-- [需求對照](docs/REQUIREMENTS.md)
-- [截圖分析](docs/CARD_ANALYSIS.md)
-- [Schema 與 API](docs/SPEC.md)
-- [設計規範](docs/DESIGN.md)
-- [任務依賴](docs/TASKS.md)
-- [測試案例](docs/TEST_CASES.md)
-- [協作紀錄](docs/AGENT_LOG.md)
+## 執行
 
-## 預定交付
-
-卡片列表／單卡模式、schema 驅動編輯面板、localStorage、ranking 與 flash-sale 兩種卡、獨立 sample.html 與 sample-mount.html、React/Vue 導入文件、Vitest 邏輯測試與 Playwright 畫面驗收。
-
-## 架構取捨
-
-原生 custom element 避免綁定框架；Shadow DOM 隔離 selector，公開 CSS custom properties 作為主題接口。複雜資料走 property，不把整包 JSON 放進 HTML attribute。Vite 負責開發與 ESM/IIFE library build，不引入應用框架。Schema 作為驗證與表單描述的單一來源，TypeScript 型別由 schema 推導，避免雙份規則漂移。
-
-localStorage 適合小型同源展示，不能提供交易或跨裝置同步。採整份 snapshot 的最後接收寫入策略，不做多使用者合併。
-
-## 刻意不做／後續演進
-
-真實 momo API、結帳、SSR/SEO、跨 origin 設定同步、完整輪播與影片播放器、像素級還原與完整 RWD 打磨。基本鍵盤操作、圖片替代文字與窄螢幕可用性仍保留。後續可增加 IndexedDB／後端同步、元件版本相容策略、視覺回歸與框架整合 CI。
-
-## 開發時程
-
-原題以 first commit 起計約 120 分鐘。規劃階段與實作階段的 commit 邊界待 Gate 1 人工決定；不會回填或偽造時間。
-
-## Gate 2 本機檢視
-
-需求：Node.js 20+、npm；瀏覽器測試目前使用本機 Google Chrome（Playwright `channel: chrome`）。
+Node.js 20+、npm；瀏覽器測試使用本機 Google Chrome。
 
 ```sh
 npm ci
@@ -45,10 +18,36 @@ npm run test:e2e
 npm run build
 ```
 
-預覽為 http://127.0.0.1:4173/。目前可選三筆 ranking mock、更新售價；這是 Gate 2 驗證頁，尚非完整 showroom editor，沒有保存功能。`npm run build` 產生 `dist/momo-cards.es.js` 與 `dist/momo-cards.iife.js` 元件 library；展示網站與獨立 sample 的打包在 Gate 2 後整合。
+本機預覽：http://127.0.0.1:4173/。
 
-使用者的 SVG 放在 `public/assets/`，對應檔名見該目錄 README。缺檔以可存取的 fallback 顯示；不把未知商品圖當成已交付素材。
+build 產生 `dist/momo-cards.es.js` 與 `dist/momo-cards.iife.js` 元件 library。展示網站與獨立 sample 的打包在下一階段整合。
 
-已完成：schema / core / ranking / registry / configureCatalog / mount / Shadow DOM lifecycle。待 Gate 2 後完成：flash-sale、完整 editor、store/persistence、sample HTML、Vue/React 範例。
+## 資料與使用
 
-驗證結果見 [Gate 2 QA 報告](docs/QA_GATE2.md)。
+`mock/cards.draft.json` 為展示資料；`public/assets/` 為本地原生 SVG，可替換正式提供的素材。圖片與價格皆為 mock，不代表即時販售資訊。原價存在即顯示劃線，包括原價等於售價。
+
+元件支援 data property、product-id 與 variant attributes；configureCatalog 注入資料，mount 提供 update / destroy，registry 支援可信的自訂 renderer。卡片不依賴 showroom 或 localStorage。複雜資料走 property，不序列化整包 JSON attribute。詳細契約見 SPEC。
+
+目前編輯只更新單卡預覽，重新整理會還原；完整 schema editor、browser persistence、sample HTML 與 Vue/React 範例尚待實作。
+
+## 驗證與文件
+
+- [最新雙版型 QA](docs/QA_LAYOUTS.md)：40 個邏輯測試、11 個瀏覽器測試及 build 通過。
+- [桌面截圖](docs/screenshots/layouts-desktop.png)
+- [手機截圖](docs/screenshots/layouts-mobile.png)
+- [契約與API](docs/SPEC.md)
+- [需求對照](docs/REQUIREMENTS.md)
+- [卡片分析](docs/CARD_ANALYSIS.md)
+- [設計規範](docs/DESIGN.md)
+- [任務依賴](docs/TASKS.md)
+- [測試案例](docs/TEST_CASES.md)
+- [協作紀錄](docs/AGENT_LOG.md)
+- [第一輪 QA 與依賴稽核限制](docs/QA_GATE2.md)
+
+## 取捨
+
+Shadow DOM 隔離 selector，CSS custom properties 為公開主題通道。原生元件避免框架 runtime，schema 推導型別並共用驗證規則。Vite 負責開發與 library build。
+
+本輪不做倒數、輪播、真實播放器與訂單。後續刻意不做真實 API、SSR/SEO、跨 origin 同步、像素級還原。基本鍵盤操作、替代文字、窄螢幕可用性保留。localStorage 計畫採小型同源 snapshot，不能保證多寫入者嚴格一致；後續可演進 IndexedDB 或後端同步。
+
+原題以 first commit 起計；首個 commit 為 2026-11-18 15:55:59 +08:00，實作與人工等待時間均如實保留。
