@@ -1,0 +1,37 @@
+/* Draft: Gate 1 approval required. Inject into each shadow root. */
+:root, :host {
+  --momo-font: system-ui, -apple-system, "Noto Sans TC", sans-serif;
+  --momo-color-text: #404040;
+  --momo-color-muted: #737373;
+  --momo-color-price: #dc2378;
+  --momo-color-sale: #df2026;
+  --momo-color-surface: #ffffff;
+  --momo-color-canvas: #f6f6f8;
+  --momo-color-ranking-bg: #f8e9ef;
+  --momo-color-stock-bg: #fcf2f3;
+  --momo-color-border: #d5d5d8;
+  --momo-color-focus: #245ac7;
+  --momo-color-preorder: #a84d00;
+  --momo-space-1: 4px;
+  --momo-space-2: 8px;
+  --momo-space-3: 12px;
+  --momo-space-4: 16px;
+  --momo-space-6: 24px;
+  --momo-space-8: 32px;
+  --momo-text-small: 12px;
+  --momo-text-body: 16px;
+  --momo-text-title: 18px;
+  --momo-text-price: 28px;
+  --momo-line-height: 1.5;
+  --momo-radius-small: 8px;
+  --momo-radius-card: 12px;
+  --momo-radius-pill: 999px;
+  --momo-border-width: 1px;
+  --momo-focus-width: 2px;
+  --momo-focus-offset: 3px;
+  --momo-touch-target: 44px;
+  --momo-ranking-width: 440px;
+  --momo-ranking-image: 160px;
+  --momo-flash-width: 260px;
+  --momo-card-shadow: 0 2px 8px #00000014;
+}

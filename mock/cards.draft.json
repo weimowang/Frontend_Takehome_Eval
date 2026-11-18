@@ -1,0 +1,123 @@
+[
+  {
+    "schemaVersion": 1,
+    "id": "flash-persil",
+    "variant": "flash-sale",
+    "title": "【Persil】深層酵解濃縮洗衣精6包",
+    "image": {
+      "src": "./assets/flash-persil.svg",
+      "alt": "【Persil】深層酵解濃縮洗衣精6包"
+    },
+    "price": 899,
+    "originalPrice": 1914,
+    "badges": [
+      {
+        "kind": "preorder",
+        "label": "預"
+      }
+    ],
+    "stock": 474,
+    "tagline": "2件贈150↘殺124/包up"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "flash-zwilling",
+    "variant": "flash-sale",
+    "title": "【ZWILLING德國雙人】FS智能真空玻璃保鮮盒7+4組",
+    "image": {
+      "src": "./assets/flash-zwilling.svg",
+      "alt": "【ZWILLING德國雙人】FS智能真空玻璃保鮮盒7+4組"
+    },
+    "price": 3999,
+    "originalPrice": 7580,
+    "badges": [],
+    "stock": 79,
+    "tagline": "1鍵真空5倍保鮮↘53折"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "flash-fan",
+    "variant": "flash-sale",
+    "title": "【禾聯】14吋遙控DC風扇 HDF-14A3",
+    "image": {
+      "src": "./assets/flash-fan.svg",
+      "alt": "【禾聯】14吋遙控DC風扇 HDF-14A3"
+    },
+    "price": 999,
+    "originalPrice": 2490,
+    "badges": [],
+    "stock": 454,
+    "tagline": "mo獨家★一日下殺↘限量搶"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "flash-asus",
+    "variant": "flash-sale",
+    "title": "【ASUS華碩】WiFi7三頻RT-BE92U",
+    "image": {
+      "src": "./assets/flash-asus.svg",
+      "alt": "【ASUS華碩】WiFi7三頻RT-BE92U"
+    },
+    "price": 7699,
+    "originalPrice": 8990,
+    "badges": [],
+    "stock": 22,
+    "tagline": "WiFi7極速連線"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "flash-dogfood",
+    "variant": "flash-sale",
+    "title": "【Donna多納】健康犬均衡狗糧15kg-2入組",
+    "image": {
+      "src": "./assets/flash-dogfood.svg",
+      "alt": "【Donna多納】健康犬均衡狗糧15kg-2入組"
+    },
+    "price": 999,
+    "originalPrice": 1238,
+    "badges": [],
+    "stock": 996,
+    "tagline": "一日下殺$499.5/包"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "rank-bose",
+    "variant": "ranking",
+    "title": "【BOSE】Ultra 開放式耳機 II 五色任選",
+    "image": {
+      "src": "./assets/rank-bose.svg",
+      "alt": "【BOSE】Ultra 開放式耳機 II 五色任選"
+    },
+    "price": 9500,
+    "originalPrice": 9500,
+    "badges": [],
+    "tagline": "新品預購中 台灣官方授權"
+  },
+  {
+    "schemaVersion": 1,
+    "id": "rank-phone",
+    "variant": "ranking",
+    "title": "【Apple】iPhone 18 Pro(256G/6.3吋)",
+    "image": {
+      "src": "./assets/rank-phone.svg",
+      "alt": "【Apple】iPhone 18 Pro(256G/6.3吋)"
+    },
+    "price": 43900,
+    "originalPrice": 45700,
+    "badges": []
+  },
+  {
+    "schemaVersion": 1,
+    "id": "rank-tv",
+    "variant": "ranking",
+    "title": "【TCL】家電快配★65型 4K QD Mini",
+    "image": {
+      "src": "./assets/rank-tv.svg",
+      "alt": "【TCL】家電快配★65型 4K QD Mini"
+    },
+    "price": 22900,
+    "originalPrice": 34990,
+    "badges": [],
+    "tagline": "滿1件折9090"
+  }
+]
