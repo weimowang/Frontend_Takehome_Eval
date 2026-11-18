@@ -1,83 +1,78 @@
 [
   {
     "schemaVersion": 1,
-    "id": "flash-persil",
+    "id": "flash-salmon",
     "variant": "flash-sale",
-    "title": "【Persil】深層酵解濃縮洗衣精6包",
+    "title": "【帥哥魚海鮮】智利鮭魚切片400g",
     "image": {
-      "src": "./assets/flash-persil.svg",
-      "alt": "【Persil】深層酵解濃縮洗衣精6包"
+      "src": "./assets/flash-salmon.svg",
+      "alt": "【帥哥魚海鮮】智利鮭魚切片400g（本地示意圖）"
     },
-    "price": 899,
-    "originalPrice": 1914,
-    "badges": [
-      {
-        "kind": "preorder",
-        "label": "預"
-      }
-    ],
-    "stock": 474,
-    "tagline": "2件贈150↘殺124/包up"
+    "price": 149,
+    "originalPrice": 300,
+    "badges": [],
+    "stock": 188,
+    "tagline": "下單送3%★搶$119/片up"
   },
   {
     "schemaVersion": 1,
-    "id": "flash-zwilling",
+    "id": "flash-hotel",
     "variant": "flash-sale",
-    "title": "【ZWILLING德國雙人】FS智能真空玻璃保鮮盒7+4組",
+    "title": "【葛瑪蘭之星】2人泡湯＋午餐吃到飽",
     "image": {
-      "src": "./assets/flash-zwilling.svg",
-      "alt": "【ZWILLING德國雙人】FS智能真空玻璃保鮮盒7+4組"
+      "src": "./assets/flash-hotel.svg",
+      "alt": "【葛瑪蘭之星】2人泡湯＋午餐吃到飽（本地示意圖）"
     },
-    "price": 3999,
-    "originalPrice": 7580,
+    "price": 1299,
+    "originalPrice": 2236,
     "badges": [],
-    "stock": 79,
-    "tagline": "1鍵真空5倍保鮮↘53折"
+    "stock": 437,
+    "tagline": "一日特談★假日不加價"
   },
   {
     "schemaVersion": 1,
-    "id": "flash-fan",
+    "id": "flash-umbrella",
     "variant": "flash-sale",
-    "title": "【禾聯】14吋遙控DC風扇 HDF-14A3",
+    "title": "【雨傘王】BigRed極輕薄系列 安全防回彈折疊傘",
     "image": {
-      "src": "./assets/flash-fan.svg",
-      "alt": "【禾聯】14吋遙控DC風扇 HDF-14A3"
+      "src": "./assets/flash-umbrella.svg",
+      "alt": "【雨傘王】BigRed極輕薄系列 安全防回彈折疊傘（本地示意圖）"
     },
-    "price": 999,
-    "originalPrice": 2490,
+    "price": 879,
+    "originalPrice": 1190,
     "badges": [],
-    "stock": 454,
-    "tagline": "mo獨家★一日下殺↘限量搶"
+    "stock": 280,
+    "tagline": "一日74折★防曬降溫隨收隨停"
   },
   {
     "schemaVersion": 1,
-    "id": "flash-asus",
+    "id": "flash-tissue",
     "variant": "flash-sale",
-    "title": "【ASUS華碩】WiFi7三頻RT-BE92U",
+    "title": "【五月花】厚棒四層衛生紙90抽×60包",
     "image": {
-      "src": "./assets/flash-asus.svg",
-      "alt": "【ASUS華碩】WiFi7三頻RT-BE92U"
+      "src": "./assets/flash-tissue.svg",
+      "alt": "【五月花】厚棒四層衛生紙90抽×60包（本地示意圖）"
     },
-    "price": 7699,
-    "originalPrice": 8990,
+    "price": 1248,
+    "originalPrice": 1674,
     "badges": [],
-    "stock": 22,
-    "tagline": "WiFi7極速連線"
+    "stock": 246,
+    "tagline": "買2送150★狂$19/包"
   },
   {
     "schemaVersion": 1,
-    "id": "flash-dogfood",
+    "id": "flash-jerky",
     "variant": "flash-sale",
-    "title": "【Donna多納】健康犬均衡狗糧15kg-2入組",
+    "title": "【新東陽】牛肉乾大包210g×3包（口味任選）",
     "image": {
-      "src": "./assets/flash-dogfood.svg",
-      "alt": "【Donna多納】健康犬均衡狗糧15kg-2入組"
+      "src": "./assets/flash-jerky.svg",
+      "alt": "【新東陽】牛肉乾大包210g×3包（口味任選）（本地示意圖）"
     },
-    "price": 999,
-    "originalPrice": 1238,
+    "price": 588,
+    "originalPrice": 990,
     "badges": [],
-    "stock": 996,
-    "tagline": "一日下殺$499.5/包"
+    "stock": 456,
+    "tagline": "▼贈100mo＋牛肉醬罐頭1罐"
   },
   {
     "schemaVersion": 1,
@@ -86,7 +81,7 @@
     "title": "【BOSE】Ultra 開放式耳機 II 五色任選",
     "image": {
       "src": "./assets/rank-bose.svg",
-      "alt": "【BOSE】Ultra 開放式耳機 II 五色任選"
+      "alt": "【BOSE】Ultra 開放式耳機 II 五色任選（本地示意圖）"
     },
     "price": 9500,
     "originalPrice": 9500,
@@ -100,7 +95,7 @@
     "title": "【Apple】iPhone 18 Pro(256G/6.3吋)",
     "image": {
       "src": "./assets/rank-phone.svg",
-      "alt": "【Apple】iPhone 18 Pro(256G/6.3吋)"
+      "alt": "【Apple】iPhone 18 Pro(256G/6.3吋)（本地示意圖）"
     },
     "price": 43900,
     "originalPrice": 45700,
@@ -113,7 +108,7 @@
     "title": "【TCL】家電快配★65型 4K QD Mini",
     "image": {
       "src": "./assets/rank-tv.svg",
-      "alt": "【TCL】家電快配★65型 4K QD Mini"
+      "alt": "【TCL】家電快配★65型 4K QD Mini（本地示意圖）"
     },
     "price": 22900,
     "originalPrice": 34990,

@@ -23,3 +23,13 @@
 - build / 40 unit / 7 browser 全通過。桌面及375px截圖已檢視。沒有 code 重試失敗。
 - env：沙箱禁止本機listen，工具核准後重跑成功；開發依賴稽核更新與剩餘限制記於QA_GATE2。
 - 實際SVG待使用者提供；目前只交付缺圖狀態與第一卡版型。不展開Gate2後任務。
+
+## 雙版型展示迭代 / 2026-11-18
+
+- 使用者補充兩張截圖，要求設計假資料並顯示對應兩種版型，另明確要求「都不要先推github」。本輪僅本機改動／commit，禁止push。
+- 此指令授權本輪先展開第二版型及mock展示；沒有將先前Gate2記為已通過，也未自行展開完整editor/store。
+- Card agent只改flash-sale renderer/styles；Mock agent只改mock JSON與本地SVG；QA agent只新增雙版型tests。主agent整合頁面、樣式與registry。
+- 改以5筆新截圖搶購商品（鮭魚、旅宿、傘、衛生紙、牛肉乾）＋3筆原ranking資料展示。
+- SVG為原生向量示意圖；不是商品實拍或真實販售頁。mock圖片未包含真實影片來源，因此不偽造播放鈕。倒數、輪播不在目前契約範圍，沒有偽造即時活動時間。
+- 雙版型驗證：40 unit＋11 browser＋build通過。真實SVG載入／1440與375截圖目視完成，無頁面溢出或pageerror。
+- code歸責：修正HTML option標籤；修正HMR下內建registry重複初始化，各一次。Dev未修改tests。證據見QA_LAYOUTS。

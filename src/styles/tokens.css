@@ -39,3 +39,16 @@
   --momo-ranking-height: 220px;
 }
 :root, :host {--showroom-width:1000px;--showroom-heading:36px;}
+:root, :host {
+  --momo-text-micro: 10px;
+  --momo-text-heading: 24px;
+  --momo-color-flash-bg: #ffdae5;
+  --showroom-wide: 1480px;
+  --showroom-title: clamp(24px,3vw,34px);
+  --momo-icon-height: 28px;
+  --momo-grid-min: 210px;
+  --momo-ranking-min: 330px;
+  --momo-ranking-thumbnail: 130px;
+  --momo-ranking-price: 26px;
+  --momo-inspector-min: 290px;
+}

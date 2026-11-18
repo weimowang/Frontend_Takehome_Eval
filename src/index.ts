@@ -1,8 +1,10 @@
 import {MomoCard} from './components/momo-card';
-import {registerVariant} from './cards/registry';
+import {registerVariant,getVariant} from './cards/registry';
 import {renderRanking} from './cards/ranking';
+import {renderFlashSale} from './cards/flash-sale';
 import {parseCard,type Card} from './schema/card';
-registerVariant({id:'ranking',label:'今日暢銷卡',render:renderRanking});
+if(!getVariant('ranking'))registerVariant({id:'ranking',label:'今日暢銷卡',render:renderRanking});
+if(!getVariant('flash-sale'))registerVariant({id:'flash-sale',label:'限時搶購卡',render:renderFlashSale});
 if(!customElements.get('momo-card'))customElements.define('momo-card',MomoCard);
 export {MomoCard,registerVariant};
 export {configureCatalog} from './core/catalog';

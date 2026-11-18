@@ -1,0 +1,104 @@
+.flash-sale {
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  max-width:var(--momo-flash-width);
+  height:100%;
+  padding:var(--momo-space-3);
+  box-shadow:var(--momo-card-shadow);
+  overflow:hidden;
+}
+.flash-sale .media {
+  position:relative;
+  flex:none;
+  width:100%;
+  border-radius:var(--momo-radius-small);
+}
+.flash-sale .body {
+  justify-content:flex-start;
+  margin-top:var(--momo-space-2);
+}
+.flash-sale .tagline {
+  font-weight:700;
+}
+.flash-sale .title {
+  min-height:calc(var(--momo-text-title) * var(--momo-line-height) * 2);
+}
+.flash-sale .prices {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:var(--momo-space-1);
+  margin-top:var(--momo-space-2);
+}
+.flash-sale .sale-line {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  column-gap:var(--momo-space-1);
+  color:var(--momo-color-sale);
+}
+.flash-sale .sale-label {
+  font-size:var(--momo-text-small);
+  font-weight:700;
+}
+.flash-sale .price {
+  color:var(--momo-color-sale);
+}
+.flash-sale .flash-footer {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--momo-space-2);
+  margin-top:var(--momo-space-3);
+  margin-right:calc(-1 * var(--momo-space-3));
+  margin-bottom:calc(-1 * var(--momo-space-3));
+  min-height:var(--momo-touch-target);
+}
+.flash-sale .stock {
+  padding:var(--momo-space-1) var(--momo-space-2);
+  border-radius:var(--momo-radius-pill);
+  background:var(--momo-color-stock-bg);
+  font-weight:700;
+  font-size:var(--momo-text-body);
+  white-space:nowrap;
+}
+.flash-sale .purchase {
+  min-height:var(--momo-touch-target);
+  min-width:calc(var(--momo-touch-target) * 2);
+  margin-left:auto;
+  padding:var(--momo-space-1) var(--momo-space-4);
+  border:0;
+  border-top-left-radius:var(--momo-space-6);
+  background:var(--momo-color-sale);
+  color:var(--momo-color-surface);
+  font:inherit;
+  font-size:var(--momo-text-price);
+  font-weight:900;
+  font-style:italic;
+  cursor:pointer;
+}
+.flash-sale .purchase:hover:not(:disabled) {filter:brightness(.92);}
+.flash-sale .purchase:focus-visible {outline-offset:calc(-1 * var(--momo-space-1));}
+.flash-sale .purchase:disabled {
+  background:var(--momo-color-muted);
+  font-size:var(--momo-text-title);
+  font-style:normal;
+  cursor:not-allowed;
+}
+.flash-sale .play-button {
+  position:absolute;
+  inset:50% auto auto 50%;
+  transform:translate(-50%,-50%);
+  display:grid;
+  place-items:center;
+  width:calc(var(--momo-touch-target) + var(--momo-space-3));
+  height:calc(var(--momo-touch-target) + var(--momo-space-3));
+  padding:var(--momo-space-2);
+  border:var(--momo-focus-width) solid var(--momo-color-surface);
+  border-radius:var(--momo-radius-pill);
+  background:color-mix(in srgb,var(--momo-color-text) 50%,transparent);
+  color:var(--momo-color-surface);
+  cursor:pointer;
+}
+.flash-sale .play-button svg {width:100%;height:100%;}

@@ -1,5 +1,6 @@
 import tokens from '../styles/tokens.css?inline';
 import styles from '../styles/card.css?inline';
+import flashStyles from '../styles/flash-sale.css?inline';
 import {parseCard,type Card} from '../schema/card';
 import {getProduct,subscribeCatalog} from '../core/catalog';
 import {getVariant} from '../cards/registry';
@@ -12,7 +13,7 @@ export class MomoCard extends HTMLElement {
   #queued=false;
   #content:HTMLDivElement;
   constructor() {
-    super();const root=this.attachShadow({mode:'open'});const css=node('style');css.textContent=tokens+styles;this.#content=node('div');root.append(css,this.#content);
+    super();const root=this.attachShadow({mode:'open'});const css=node('style');css.textContent=tokens+styles+flashStyles;this.#content=node('div');root.append(css,this.#content);
   }
   connectedCallback() {
     // Upgrade properties assigned before the element definition was loaded.
