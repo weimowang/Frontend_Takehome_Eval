@@ -8,4 +8,4 @@ ranking：左圖右文、售價桃紅、原價灰；flash-sale：上圖下文、
 
 Showroom 使用中性背景、主內容卡片區加右側編輯欄；窄視窗改上下排列。以系統繁中文字型，不依賴外部字型下載。44px 操作區、清晰 focus ring、欄位 label/error、價格不只靠顏色區分。編輯器不在每次輸入時 aria-live 播報整張卡。
 
-圖片來源與等價原價顯示規則列於 QUESTIONS。未核准前 mock 的 image.src 使用待製作本地 SVG 路徑，不能當作已完成素材。
+圖片來源與等價原價顯示規則列於 QUESTIONS。Gate 1 已核准由使用者提供本地 SVG；mock 的 image.src 保留本地路徑，缺檔顯示 fallback，不能當作已完成素材。

@@ -32,3 +32,23 @@ localStorage 適合小型同源展示，不能提供交易或跨裝置同步。�
 ## 開發時程
 
 原題以 first commit 起計約 120 分鐘。規劃階段與實作階段的 commit 邊界待 Gate 1 人工決定；不會回填或偽造時間。
+
+## Gate 2 本機檢視
+
+需求：Node.js 20+、npm；瀏覽器測試目前使用本機 Google Chrome（Playwright `channel: chrome`）。
+
+```sh
+npm ci
+npm run dev
+npm test
+npm run test:e2e
+npm run build
+```
+
+預覽為 http://127.0.0.1:4173/。目前可選三筆 ranking mock、更新售價；這是 Gate 2 驗證頁，尚非完整 showroom editor，沒有保存功能。`npm run build` 產生 `dist/momo-cards.es.js` 與 `dist/momo-cards.iife.js` 元件 library；展示網站與獨立 sample 的打包在 Gate 2 後整合。
+
+使用者的 SVG 放在 `public/assets/`，對應檔名見該目錄 README。缺檔以可存取的 fallback 顯示；不把未知商品圖當成已交付素材。
+
+已完成：schema / core / ranking / registry / configureCatalog / mount / Shadow DOM lifecycle。待 Gate 2 後完成：flash-sale、完整 editor、store/persistence、sample HTML、Vue/React 範例。
+
+驗證結果見 [Gate 2 QA 報告](docs/QA_GATE2.md)。

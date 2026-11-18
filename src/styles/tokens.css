@@ -1,4 +1,4 @@
-/* Draft: Gate 1 approval required. Inject into each shadow root. */
+/* Gate 1 approved. Inject into each shadow root. */
 :root, :host {
   --momo-font: system-ui, -apple-system, "Noto Sans TC", sans-serif;
   --momo-color-text: #404040;
@@ -35,3 +35,7 @@
   --momo-flash-width: 260px;
   --momo-card-shadow: 0 2px 8px #00000014;
 }
+:root, :host {
+  --momo-ranking-height: 220px;
+}
+:root, :host {--showroom-width:1000px;--showroom-heading:36px;}

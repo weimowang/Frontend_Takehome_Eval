@@ -1,0 +1,19 @@
+:host { display: block; font-family: var(--momo-font); color:var(--momo-color-text); font-size:var(--momo-text-body);line-height:var(--momo-line-height); }
+*, *::before, *::after {box-sizing:border-box;}
+.card {background:var(--momo-color-surface);border:var(--momo-border-width) solid var(--momo-color-border);border-radius:var(--momo-radius-card);padding:var(--momo-space-4);}
+.ranking {display:flex;gap:var(--momo-space-4);width:100%;max-width:var(--momo-ranking-width);min-height:var(--momo-ranking-height);align-items:center;}
+.media {flex:0 0 var(--momo-ranking-image);width:var(--momo-ranking-image);aspect-ratio:1;overflow:hidden;border-radius:var(--momo-radius-small);background:var(--momo-color-surface);}
+.media img {width:100%;height:100%;object-fit:contain;display:block;}
+.image-fallback {display:grid;place-items:center;text-align:center;height:100%;padding:var(--momo-space-3);background:var(--momo-color-canvas);color:var(--momo-color-muted);font-size:var(--momo-text-small);}
+.body {flex:1;min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center;}
+p,h2 {margin:0;}
+.tagline {color:var(--momo-color-sale);font-size:var(--momo-text-body);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-bottom:var(--momo-space-1);}
+.title {font-size:var(--momo-text-title);font-weight:normal;}
+.title button,.title a {font:inherit;color:inherit;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;text-align:start;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:var(--momo-touch-target);}
+.title button:hover,.title a:hover {text-decoration:underline;}
+:focus-visible {outline:var(--momo-focus-width) solid var(--momo-color-focus);outline-offset:var(--momo-focus-offset);}
+.prices {display:flex;align-items:baseline;gap:var(--momo-space-2);flex-wrap:wrap;margin-top:var(--momo-space-6);}
+.price {font-size:var(--momo-text-price);color:var(--momo-color-price);line-height:1.2;font-variant-numeric:tabular-nums;}
+.original-price {color:var(--momo-color-muted);font-size:var(--momo-text-body);}
+.badge {display:inline-block;padding:0 var(--momo-space-1);border-radius:var(--momo-space-1);font-size:var(--momo-text-small);background:var(--momo-color-preorder);color:var(--momo-color-surface);}
+.state {padding:var(--momo-space-6);border:var(--momo-border-width) solid var(--momo-color-border);border-radius:var(--momo-radius-card);background:var(--momo-color-surface);}

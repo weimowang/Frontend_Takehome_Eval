@@ -14,3 +14,12 @@
 ## Gate 1 人工核准 / 2026-11-18
 
 使用者原文：Q-001 採用Ａ；Q-002 照樣顯示但劃線；Q-003 會提供本地svg 來產生範例；Q-004 採用A。依回覆更新 SPEC 與 QUESTIONS；DECISIONS.md 仍保留使用者自行維護。開始串行 T1/T2，QA 獨立擁有 tests。
+
+## Phase 2 Step A / Gate 2 待審
+
+- 首次 commit：248e18c，2026-11-18 15:55:59 +08:00；如實保留實作與人工等待時間。
+- QA agent 獨立新增 tests/core.test.ts（40案例）與 tests/card.spec.ts（7案例），同步等價原價決議。成功圖片 fixture 在首次執行前補齊，避免缺檔競態；沒有因實作失敗調降預期。
+- Dev 主 agent：schema-derived types、價格核心、catalog、registry、ranking renderer、momo-card lifecycle、mount API與Gate2預覽頁。
+- build / 40 unit / 7 browser 全通過。桌面及375px截圖已檢視。沒有 code 重試失敗。
+- env：沙箱禁止本機listen，工具核准後重跑成功；開發依賴稽核更新與剩餘限制記於QA_GATE2。
+- 實際SVG待使用者提供；目前只交付缺圖狀態與第一卡版型。不展開Gate2後任務。
