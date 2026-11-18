@@ -33,3 +33,14 @@
 - SVG為原生向量示意圖；不是商品實拍或真實販售頁。mock圖片未包含真實影片來源，因此不偽造播放鈕。倒數、輪播不在目前契約範圍，沒有偽造即時活動時間。
 - 雙版型驗證：40 unit＋11 browser＋build通過。真實SVG載入／1440與375截圖目視完成，無頁面溢出或pageerror。
 - code歸責：修正HTML option標籤；修正HMR下內建registry重複初始化，各一次。Dev未修改tests。證據見QA_LAYOUTS。
+
+## Gate 2 通過與 Phase 2 Step B/C / 2026-11-18
+
+- 使用者原文：「這兩種版型可以，Gate 2 通過。接著依 workflow 完成調整面板、localStorage 保存與 sample HTML，先不要推 GitHub。」依此展開剩餘工作，禁止push持續有效。
+- Store agent（原Card agent）：src/store/，版本化snapshot、示範migration、clone、降級、同源storage event與清理。
+- Editor agent（原Mock agent）：src/showroom/editor.ts與editor.css，schema驅動表單、即時驗證、原始輸入與錯誤，不寫保存。
+- QA agent：只擁有tests/與QA_FINAL，新增Store/Editor/Embed與邊界測試；Dev未修改tests。
+- Root：整合單一store、列表/篩選/單卡、草稿切換、sample HTML、library+site build、導入與取捨文件。
+- 實際驗證：60 unit、20 browser、library/site build通過。正式build smoke驗證重整保存、reset與sample update/destroy；無pageerror。1440/375截圖均檢視，無水平溢出。
+- sample首次build不接受top-level await，調整site target；Vite改寫dynamic import影響獨立載入驗證，改classic async bootstrap直接載入dist，各一次修正。沒有修改測試預期。
+- Gate 3仍待人工最終檢視；沒有替使用者寫入DECISIONS.md或宣稱Gate 3通過。所有commit僅本地。

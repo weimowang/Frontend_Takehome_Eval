@@ -10,3 +10,11 @@
 Gate 1 已通過，沒有待決規格問題。外部待提供項目：本地 SVG 檔案與商品對應；影響最終商品畫面驗收，不阻擋 schema、core 或元件 lifecycle 實作。
 
 Gate 2：第一張 ranking 卡完成後人工確認，再展開平行開發。
+
+## Gate 2
+
+使用者已明確回覆兩種版型可以並通過Gate 2，授權完成editor/store/sample。後續8張本地SVG示意圖也已展示並通過此畫面方向確認。
+
+## Gate 3
+
+功能、文件與QA已完成，等待人工最後檢視。沒有新的待決schema問題。GitHub push明確暫停，維持本地commit。
