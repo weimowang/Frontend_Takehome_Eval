@@ -48,3 +48,7 @@
 ## GitHub 推送授權 / 2026-11-18
 
 使用者明確要求「那幫我推到github」，撤銷先前暫不push限制。將main與完整本地commit history推送至指定origin，不使用force push。此授權不視為額外的Gate 3畫面核准。
+
+## GitHub Pages 部署 / 2026-11-18
+
+使用者授權調整路徑並部署，要求之後push自動更新。加入main push / workflow_dispatch workflow，啟用Pages Actions來源，Vite相對base與相對sample連結。正式產物已在本機repository子路徑驗證首頁／SVG／保存／兩個sample，未使用個人token於workflow。

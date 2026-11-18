@@ -45,7 +45,7 @@ npm run test:e2e  # 20 個真實瀏覽器測試；先 build
 npm run preview  # 正式建置預覽 http://127.0.0.1:4176/
 ```
 
-build 產生 `dist/momo-cards.es.js`、`dist/momo-cards.iife.js` 元件 library，以及可直接靜態託管的 `site/`（含展示間、samples、library與圖片）。以HTTP服務開啟，不能直接雙擊 file://；此交付預設部署在網站根路徑。
+build 產生 `dist/momo-cards.es.js`、`dist/momo-cards.iife.js` 元件 library，以及可直接靜態託管的 `site/`（含展示間、samples、library與圖片）。以HTTP服務開啟，不能直接雙擊 file://；正式建置使用相對base，可部署在GitHub Pages的repository子路徑。
 
 ## 使用方式
 
@@ -98,3 +98,13 @@ Vue／React提供導入範例，未安裝其runtime做專屬整合測試；原�
 - 開發依賴稽核仍有picomatch ReDoS與上游傳播告警，固定可信glob、不對外暴露dev server；詳見[早期稽核紀錄](docs/QA_GATE2.md)。沒有production runtime依賴，後續追蹤正式修補。
 
 原題以first commit計時：2026-11-18 15:55:59 +08:00。實作、修正與人工等待如實保留，各階段有Co-authored commit。
+
+## GitHub Pages 自動部署
+
+網站：https://weimowang.github.io/Frontend_Takehome_Eval/
+
+`.github/workflows/pages.yml` 在每次push到main時自動執行 npm ci、60個邏輯測試、正式build與Playwright瀏覽器測試，通過後發布site/至GitHub Pages。也可從Actions手動執行workflow_dispatch。其他分支不直接發布。
+
+發布來源為GitHub Actions；工作使用contents:read，部署工作額外使用pages:write及id-token:write。沒有儲存個人token於repository。首頁與sample連結、SVG、CSS、JS皆可在repository子路徑載入。
+
+Pages上的localStorage與localhost不同origin，不會帶入本機編輯資料；每位訪客資料仍只保存在自己的瀏覽器。
