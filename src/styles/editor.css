@@ -1,0 +1,47 @@
+.card-editor {
+  display: grid;
+  gap: var(--momo-space-4);
+  color: var(--momo-color-text);
+  font-family: var(--momo-font);
+}
+.card-editor .editor-intro,
+.card-editor .editor-help,
+.card-editor .editor-error,
+.card-editor .editor-status {
+  margin: 0;
+  font-size: var(--momo-text-small);
+  line-height: var(--momo-line-height);
+}
+.card-editor .editor-intro,
+.card-editor .editor-help { color: var(--momo-color-muted); }
+.card-editor .editor-field { display: grid; gap: var(--momo-space-1); min-width: 0; }
+.card-editor .editor-label { font-size: var(--momo-text-body); font-weight: 600; }
+.card-editor input,
+.card-editor textarea,
+.card-editor select {
+  width: 100%;
+  min-width: 0;
+  min-height: var(--momo-touch-target);
+  padding: var(--momo-space-2) var(--momo-space-3);
+  border: var(--momo-border-width) solid var(--momo-color-border);
+  border-radius: var(--momo-radius-small);
+  background: var(--momo-color-surface);
+  color: var(--momo-color-text);
+  font: inherit;
+  line-height: var(--momo-line-height);
+}
+.card-editor textarea { resize: vertical; }
+.card-editor input[readonly] { background: var(--momo-color-canvas); color: var(--momo-color-muted); }
+.card-editor [aria-invalid='true'] { border-color: var(--momo-color-sale); }
+.card-editor .editor-error { color: var(--momo-color-sale); }
+.card-editor .editor-error[hidden] { display: none; }
+.card-editor :focus-visible {
+  outline: var(--momo-focus-width) solid var(--momo-color-focus);
+  outline-offset: var(--momo-focus-offset);
+}
+.card-editor .editor-badge-row { display: grid; grid-template-columns: 1fr 2fr; gap: var(--momo-space-2); }
+.card-editor .editor-status {
+  padding: var(--momo-space-3);
+  background: var(--momo-color-canvas);
+  border-radius: var(--momo-radius-small);
+}
