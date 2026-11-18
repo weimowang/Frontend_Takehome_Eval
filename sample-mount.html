@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>命令式商品卡範例</title><link rel="stylesheet" href="/examples.css"></head>
+<body><main><a href="/">← 回展示間</a><h1>命令式 mount 範例</h1><p>以完整資料建立元件，透過 update 更新，destroy 清理。</p><section id="sample-container" aria-label="命令式商品範例"><p>這段宿主內容在 destroy 後仍會保留。</p></section>
+<div class="actions"><button id="sample-update" type="button">更新商品</button><button id="sample-destroy" type="button">移除元件</button></div><p id="sample-feedback" role="status">元件已掛載。</p></main>
+<script>
+(async () => {
+const url='./dist/momo-cards.es.js';
+const {mount}=await import(/* @vite-ignore */ url);
+const data={schemaVersion:1,id:'mount-headphones',variant:'ranking',title:'示範耳機',image:{src:'./assets/rank-bose.svg',alt:'五色耳機示意圖'},price:9500,originalPrice:9500};
+const handle=mount(document.querySelector('#sample-container'),{data});
+const feedback=document.querySelector('#sample-feedback');
+document.querySelector('#sample-update').addEventListener('click',()=>{handle.update({...data,title:'更新後的示範耳機',price:8900});feedback.textContent='已更新商品資料。';});
+document.querySelector('#sample-destroy').addEventListener('click',()=>{handle.destroy();document.querySelector('#sample-update').disabled=true;document.querySelector('#sample-destroy').disabled=true;feedback.textContent='元件已移除，宿主內容保留。';});
+document.addEventListener('momo-card-action',event=>{feedback.textContent=`收到 ${event.detail.action}：${event.detail.id}`;});
+})().catch(error => { document.querySelector("#sample-feedback").textContent = `元件載入失敗：${error.message}。請先執行 npm run build。`; });
+</script></body></html>
