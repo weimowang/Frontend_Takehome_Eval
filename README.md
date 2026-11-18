@@ -4,6 +4,26 @@
 
 已完成兩種商品卡、schema 驅動調整面板、localStorage 保存與同源跨分頁同步，以及兩個獨立 HTML 嵌入範例。Gate 1、Gate 2 已由使用者核准；功能與 QA 完成，等待 Gate 3 最終人工檢視。依使用者要求，所有 commit 只在本機，**未 push GitHub**。
 
+## 題目 B 需求對照
+
+以下逐項對應題目的基本需求與 Bonus；實作範圍及限制一併列出。
+
+| 評分項目 | 本專案實作 | 檢視／驗證入口 |
+| --- | --- | --- |
+| 基本需求：至少一個卡片 | 共兩種版型：直式 `flash-sale`、橫式 `ranking`，提供8筆本地mock與SVG。 | 首頁兩區塊；[資料](mock/cards.draft.json)、[卡片分析](docs/CARD_ANALYSIS.md) |
+| 列出所有商品卡／展示單一商品卡 | 首頁列出全部商品，可依版型篩選；點選商品或使用選單切換預覽，「只看單卡」隱藏列表。 | 首頁列表與調整面板；[展示測試](tests/layouts.spec.ts) |
+| 商品卡細節調整介面 — Browser-side Persistence | 表單由schema欄位描述產生；合法輸入即時更新列表與預覽並保存localStorage，重整還原商品及選取id。無效輸入不覆蓋合法資料；支援重設與儲存失敗提示。 | [Editor](src/showroom/editor.ts)、[Store](src/store/store.ts)、[編輯與保存測試](tests/editor.spec.ts) |
+| sample HTML 使用商品卡 | 宣告式custom element與命令式mount兩頁均直接載入同一份建置後library，不依賴showroom或框架。 | [sample.html](sample.html)、[sample-mount.html](sample-mount.html)、[嵌入測試](tests/embed.spec.ts) |
+| Bonus：Reusable Card Architecture | 原生Web Component搭配Shadow DOM，公開data property、attributes、事件與mount/update/destroy；共用價格／圖片／標題呈現；renderer不依賴編輯器或保存層。 | [元件入口](src/index.ts)、[共用呈現](src/components/shared.ts)、[導入範例](docs/INTEGRATION.md) |
+| Bonus：Schema / Plugin Extensibility | 欄位描述推導TypeScript型別，同時驅動驗證與表單。registry註冊可信renderer並擴充合法variant；瀏覽器測試驗證第三種測試版型。 | [Schema](src/schema/card.ts)、[Registry](src/cards/registry.ts)、[擴充測試](tests/card.spec.ts) |
+| Bonus：State Consistency Strategy | Store為唯一已接受資料來源，editor保留未通過驗證的草稿；保存與還原皆驗證snapshot。同源storage事件原子替換、不回寫，避免循環；版本化key、示範migration及錯誤降級。 | [一致性策略](docs/STATE.md)、[保存格式](src/store/persistence.ts)、[Store測試](tests/store.test.ts) |
+
+### Bonus 的實際邊界
+
+- **Reusable**：原生API與獨立HTML已測試；Vue／React提供導入文件，未執行框架runtime專屬測試。
+- **Extensibility**：支援可信的renderer註冊，並非遠端plugin平台。新增欄位仍需維護對應的schema驗證；新增版型需同步擴充editor選單與測試，不能宣稱所有擴充都零修改。
+- **Consistency**：採同源、最後接收snapshot策略；不提供跨origin同步、多人資料合併或同時多寫入者嚴格收斂。
+
 ## 快速啟動
 
 需求：Node.js 20+、npm。瀏覽器測試使用本機 Google Chrome。
